@@ -30,12 +30,14 @@ export const checkUser = async () => {
           Authorization: `Bearer ${STRAPI_API_TOKEN}`,
         },
         cache: "no-store",
-      }
+      },
     );
 
     if (!existingUserResponse.ok) {
       const errorText = await existingUserResponse.text();
       console.error("Strapi error response:", errorText);
+      console.log("Status code: ", existingUserResponse.status);
+
       return null;
     }
 
@@ -66,12 +68,12 @@ export const checkUser = async () => {
         headers: {
           Authorization: `Bearer ${STRAPI_API_TOKEN}`,
         },
-      }
+      },
     );
 
     const rolesData = await rolesResponse.json();
     const authenticatedRole = rolesData.roles.find(
-      (role) => role.type === "authenticated"
+      (role) => role.type === "authenticated",
     );
 
     if (!authenticatedRole) {

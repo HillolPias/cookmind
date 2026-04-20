@@ -42,7 +42,7 @@ export default function HowToCookModal() {
   return (
     <Dialog open={isOpen} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
-        <button className="hover:text-orange-600 transition-colors flex items-center gap-1.5 text-sm font-medium text-stone-600">
+        <button className="text-sm font-medium text-slate-400 hover:text-orange-400 transition-colors duration-200 flex gap-1.5 items-center hover:drop-shadow-[0_0_8px_rgba(251,146,60,0.4)]">
           <ChefHat className="w-4 h-4" />
           How to Cook?
         </button>
@@ -95,7 +95,7 @@ export default function HowToCookModal() {
                   >
                     {example}
                   </button>
-                )
+                ),
               )}
             </div>
           </div>

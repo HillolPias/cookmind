@@ -14,7 +14,7 @@ export default async function Header() {
   const user = await checkUser();
 
   return (
-    <header className="fixed top-0 w-full border-b border-stone-200 bg-stone-50/80 backdrop-blur-md z-50 supports-backdrop-filter:bg-stone-50/60">
+    <header className="fixed top-0 w-full border-b border-white/10 bg-black/40 backdrop-blur-md z-50 supports-backdrop-filter:bg-black/30">
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link
@@ -26,22 +26,22 @@ export default async function Header() {
             alt="Servd Logo"
             width={60}
             height={60}
-            className="w-48"
+            className="w-42"
           />
         </Link>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">
+        <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-400">
           <Link
             href="/recipes"
-            className="hover:text-orange-600 transition-colors flex gap-1.5 items-center"
+            className="hover:text-orange-400 transition-colors duration-200 flex gap-1.5 items-center hover:drop-shadow-[0_0_8px_rgba(251,146,60,0.4)]"
           >
             <Cookie className="w-4 h-4" />
             My Recipes
           </Link>
           <Link
             href="/pantry"
-            className="hover:text-orange-600 transition-colors flex gap-1.5 items-center"
+            className="hover:text-orange-400 transition-colors duration-200 flex gap-1.5 items-center hover:drop-shadow-[0_0_8px_rgba(251,146,60,0.4)]"
           >
             <Refrigerator className="w-4 h-4" />
             My Pantry
@@ -60,15 +60,15 @@ export default async function Header() {
                   variant="outline"
                   className={`flex h-8 px-3 gap-1.5 rounded-full text-xs font-semibold transition-all ${
                     user.subscriptionTier === "pro"
-                      ? "bg-linear-to-r from-orange-600 to-amber-500 text-white border-none shadow-sm"
-                      : "bg-stone-200/50 text-stone-600 border-stone-200 cursor-pointer hover:bg-stone-300/50 hover:border-stone-300"
+                      ? "bg-linear-to-r from-orange-500 to-amber-400 text-white border-none shadow-md shadow-orange-500/30"
+                      : "bg-white/5 text-slate-400 border-white/10 cursor-pointer hover:bg-white/10 hover:border-white/20 hover:text-slate-300"
                   }`}
                 >
                   <Sparkles
                     className={`h-3 w-3 ${
                       user.subscriptionTier === "pro"
                         ? "text-white fill-white/20"
-                        : "text-stone-500"
+                        : "text-slate-500"
                     }`}
                   />
                   <span>
@@ -85,13 +85,16 @@ export default async function Header() {
             <SignInButton mode="modal">
               <Button
                 variant="ghost"
-                className="text-stone-600 hover:text-orange-600 hover:bg-orange-50 font-medium"
+                className="text-slate-400 hover:text-orange-400 hover:bg-orange-500/10 font-medium transition-colors duration-200"
               >
                 Sign In
               </Button>
             </SignInButton>
             <SignUpButton mode="modal">
-              <Button variant="primary" className="rounded-full px-6">
+              <Button
+                variant="primary"
+                className="px-6 rounded-full bg-linear-to-r from-violet-600 via-purple-500 to-pink-500 border-0 shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 hover:scale-[1.02] transition-all duration-200"
+              >
                 Get Started
               </Button>
             </SignUpButton>
