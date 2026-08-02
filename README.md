@@ -1,4 +1,3 @@
-[cookmind_README.md](https://github.com/user-attachments/files/30637319/cookmind_README.md)
 # Cookmind
 
 **AI Recipe Generator** — snap or upload a photo of your ingredients, and let AI turn them into ready-to-cook recipes.
@@ -81,4 +80,4 @@ ADMIN_JWT_SECRET=
 
 ## License
 
-Add your license here.
+This project is licensed under the [MIT License](LICENSE).
